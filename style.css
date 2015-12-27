@@ -1,17 +1,17 @@
 @import http://fonts.googleapis.com/css?family=Raleway;
-/*----------------------------------------------
-CSS Settings For HTML Div ExactCenter
-------------------------------------------------*/
+
 #main {
 width:960px;
-//float:center;
+float:center;
 margin:50px auto;
-font-family:raleway
+font-size:15px;
+font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+background-color:#FFFFFF
 }
 span {
 color:red
 }
-background-color:#FEFFED;
+/*background-color:#FEFFED;*/
 h1 {
 text-align:center;
 border-radius:10px 10px 0 0;
@@ -19,7 +19,7 @@ margin:-10px -40px;
 padding:15px
 }
 h2 {
-background-color:#FEFFED;
+background-color:#FFFFFF;
 text-align:center;
 border-radius:10px 10px 0 0;
 margin:-10px -40px;
@@ -32,32 +32,34 @@ margin:10px -40px;
 margin-bottom:30px
 }
 #login {
-width:300px;
-float:left;
+margin: auto;
+width:30%;
+float:center;
 border-radius:10px;
-font-family:raleway;
-border:2px solid #ccc;
-padding:10px 40px 25px;
+font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+border:3px solid #ccc;
+padding:15px 40px 25px;
 margin-top:70px
 }
 input[type=text],input[type=password] {
 width:99.5%;
-padding:10px;
-margin-top:8px;
+padding:8px;
+margin-top:10px;
 border:1px solid #ccc;
 padding-left:5px;
-font-size:16px;
-font-family:raleway
+font-size:17px;
+font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif
 }
 input[type=submit] {
-width:100%;
-background-color:#FFBC00;
+width:105%;
+background-color:#3398ff;
 color:#fff;
-border:2px solid #FFCB00;
+border:2px solid #4da5ff;
 padding:10px;
 font-size:20px;
 cursor:pointer;
 border-radius:5px;
+margin-top:10px;
 margin-bottom:15px
 }
 #profile {

@@ -62,6 +62,20 @@ border-radius:5px;
 margin-top:10px;
 margin-bottom:15px
 }
+
+#btn_register {
+width:105%;
+background-color:#ff870f;
+color:#fff;
+border:2px solid #ff751a;
+padding:10px;
+font-size:20px;
+cursor:pointer;
+border-radius:5px;
+margin-top:10px;
+margin-bottom:15px
+}
+
 #profile {
 padding:50px;
 border:1px dashed grey;
@@ -79,4 +93,10 @@ color:#6495ed
 }
 i {
 color:#6495ed
+}
+
+#Home {
+float:right;
+padding:5px;
+/*border:dashed 1px gray*/
 }

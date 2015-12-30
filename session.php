@@ -1,7 +1,7 @@
 <?php
 $connection = mysql_connect("localhost", "root", "");
 
-$db = mysql_select_db("myphpproject", $connection);
+$db = mysql_select_db("deadneon_myphpproject", $connection);
 session_start();
 
 $user_check = $_SESSION['login_user'];

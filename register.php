@@ -9,10 +9,16 @@ if(isset($_POST['btn_register'])){
 	$username = mysql_real_escape_string($_POST['username']);
 	$password = mysql_real_escape_string($_POST['password']);
 	
-	if(mysql_query("INSERT INTO 'myphpproject'.'login'('id','username','password') VALUES ('2','$username','$passsword')")){
+	
+	//mysql_query("INSERT INTO `deadneon_myphpproject`.`login` (`id`, `username`, `password`) VALUES (NULL, '$username', '$password')");
+	//<!--<script>alert('succesfully registered');</script>-->
+	//header("Location: index.php");
+	
+	if(mysql_query("INSERT INTO `deadneon_myphpproject`.`login` (`id`, `username`, `password`) VALUES (NULL, '$username', '$password')")){
 		?>
 			<script>alert('succesfully registered');</script>
 			<?php
+			mysql_close($connection);
 			header("Location: index.php");
 	} else {
 		?>

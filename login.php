@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
 		$username = mysql_real_escape_string($username);
 		$password = mysql_real_escape_string($password);
 		
-		$db = mysql_select_db("myphpproject", $connection);
+		$db = mysql_select_db("deadneon_myphpproject", $connection);
 		
 		$querry = mysql_query("SELECT * FROM login WHERE password='$password' AND username='$username'", $connection);
 		$rows = mysql_num_rows($querry);

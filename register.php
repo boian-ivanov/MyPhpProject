@@ -5,25 +5,53 @@ if(isset($_SESSION['login_user'])!=""){
 }
 require_once 'dbconnect.php';
 
+function test_input($data) {
+     $data = trim($data);
+     $data = stripslashes($data);
+     $data = htmlspecialchars($data);
+     return $data;
+}
+
 if(isset($_POST['btn_register'])){
 	$username = mysql_real_escape_string($_POST['username']);
-	$password = mysql_real_escape_string($_POST['password']);
-	
+	$email = mysql_real_escape_string($_POST['email']);
+	$name = mysql_real_escape_string($_POST['name']);
+	//$password = mysql_real_escape_string($_POST['password']);
+	/*if ('password' == 'password2'){
+		$password = mysql_real_escape_string($_POST['password']);
+	} else {
+		$error = "The password is different";
+	}*/
+	if(!empty($_POST['password']) && ($_POST['password'] == $_POST['password2'])) {
+		$password = test_input($_POST['password']);
+		$password2 = test_input($_POST['password2']);
+		if (strlen($_POST['password']) <= '8'){
+			$pass_error = "Your password must contain at least <b>8<b> characters";
+		} elseif(!preg_match("#[0-9]+#", $password)){
+			$pass_error = "Your password must contain at least <b>1<b> number"; 
+		} elseif(!preg_match("#[A-Z]+#", $password)){
+			$pass_error = "Your password must contain at least <b>1<b> capital letter";
+		} elseif(!preg_match("#[a-z]+#", $password)){
+			$pass_error = "Your password must contain at least <b>1<b> lowercase letter";
+		}	
+		
+	}
 	
 	//mysql_query("INSERT INTO `deadneon_myphpproject`.`login` (`id`, `username`, `password`) VALUES (NULL, '$username', '$password')");
 	//<!--<script>alert('succesfully registered');</script>-->
 	//header("Location: index.php");
-	
-	if(mysql_query("INSERT INTO `deadneon_myphpproject`.`login` (`id`, `username`, `password`) VALUES (NULL, '$username', '$password')")){
-		?>
-			<script>alert('succesfully registered');</script>
-			<?php
-			mysql_close($connection);
-			header("Location: index.php");
-	} else {
-		?>
-			<script>alert('an error occured while registering you');</script>
-			<?php
+	function register(){
+		if(mysql_query("INSERT INTO `deadneon_myphpproject`.`login` (`id`, `username`, `email`, `password`, `name`) VALUES (NULL, '$username', '$email','$password', '$name')")){
+			?>
+				<script>alert('succesfully registered');</script>
+				<?php
+				mysql_close($connection);
+				header("Location: index.php");
+		} else {
+			?>
+				<script>alert('an error occured while registering you');</script>
+				<?php
+		}
 	}
 }
 ?>
@@ -43,8 +71,17 @@ if(isset($_POST['btn_register'])){
 <div id="login">
 <h2>Register your account.</h2>
 <form action="" method="post">
-<input id="name" name="username" placeholder="Username" type="text">
-<input id="password" name="password" placeholder="Password" type="password">
+<input id="username" name="username" placeholder="Type your username" type="text">
+<br>
+<input id="email" name="email" placeholder="Type your e-mail" type="email">
+<br>
+<input id="password" name="password" placeholder="Type your password" type="password">
+<br>
+<input id="password2" name="password2" placeholder="Type your password again" type="password">
+<span><?php echo $pass_error; ?></span>
+<br>
+<input id="name" name="name" placeholder="Type your name" type="text">
+<br>
 <input id="btn_register" name="btn_register" type="submit" value="Register">
 </form>
 </div>

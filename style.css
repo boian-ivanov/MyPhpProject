@@ -41,7 +41,8 @@ border:3px solid #ccc;
 padding:15px 40px 25px;
 margin-top:70px
 }
-input[type=text],input[type=password] {
+/*input[type=text],input[type=password],input[type=email]*/
+#name, #username, #email, #password {
 width:99.5%;
 padding:8px;
 margin-top:10px;
@@ -50,7 +51,8 @@ padding-left:5px;
 font-size:17px;
 font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif
 }
-input[type=submit] {
+/*input[type=submit]*/
+#submit {
 width:105%;
 background-color:#3398ff;
 color:#fff;
@@ -77,15 +79,20 @@ margin-bottom:15px
 }
 
 #profile {
-padding:50px;
-border:1px dashed grey;
+padding:5px;
+border:1px;
 font-size:20px;
 background-color:#DCE6F7
 }
+
+/*#welcome {
+text-align: center;
+}*/
+
 #logout {
 float:right;
 padding:5px;
-border:dashed 1px gray
+/*border:dashed 1px gray*/
 }
 a {
 text-decoration:none;

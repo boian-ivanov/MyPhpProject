@@ -1,10 +1,10 @@
 <?php
-if(!mysql_connect("localhost","root",""))
-{
-     die('connection problem --> '.mysql_error());
+$link = mysqli_connect("localhost","root","","deadneon_myphpproject");
+
+if(mysqli_connect_errno()) {
+    printf("Connect failed: %s\n", mysqli_connect_error());
+    exit();
 }
-if(!mysql_select_db("deadneon_myphpproject"))
-{
-     die('database selection problem --> '.mysql_error());
-}
+
+//$mysqli = new mysqli("localhost","root","","deadneon_myphpproject");
 ?>

@@ -21,7 +21,7 @@ if(isset($_SESSION['login_user'])){
 <input id="name" name="username" placeholder="Username" type="text">
 <!--<label>Password : </label>-->
 <input id="password" name="password" placeholder="Password" type="password">
-<input name="submit" type="submit" value="Login">
+<input id="submit" name="submit" type="submit" value="Login">
 <b id="register"><a href="register.php">Register</a></b>
 <br>
 <span><?php echo $error; ?></span>
